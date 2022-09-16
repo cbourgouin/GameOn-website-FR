@@ -32,31 +32,69 @@ function closeLaunch() {
 
 // validation des information du formulaire
 function ValidationForm() {
-  let prenom = document.forms["reserve"]["first"];
-  let nom = document.forms["reserve"]["last"];
-  let email = document.forms["reserve"]["email"];
-  let birthDate = document.forms["reserve"]["birthdate"];
-  let quantity = document.forms["reserve"]["quantity"];
+  let validation = true;
+  let locationsIsChk = false;
+
+  const prenom = document.forms["reserve"]["first"];
+  const nom = document.forms["reserve"]["last"];
+  const email = document.forms["reserve"]["email"];
+  const birthDate = document.forms["reserve"]["birthdate"];
+  const quantity = document.forms["reserve"]["quantity"];
+  const locations = document.querySelectorAll('input[name="location"]');
+  const conditionDUt = document.forms["reserve"]["checkbox1"];
+
   if (prenom.value.length <= 2) {
-    alert("Please enter your name.");
-    prenom.focus();
-    return false;
+    prenom.parentElement.setAttribute('data-error-visible', 'true');
+    validation = false;
+  } else {
+    prenom.parentElement.removeAttribute('data-error-visible');
   }
   if (nom.value.length <= 2) {
-    nom.focus();
-    return false;
+    nom.parentElement.setAttribute('data-error-visible', 'true');
+    validation = false;
+  } else {
+    nom.parentElement.removeAttribute('data-error-visible');
   }
   if (email.value.length == 0) {
-    email.focus();
-    return false;
+    email.parentElement.setAttribute('data-error-visible', 'true');
+    validation = false;
+  } else {
+    email.parentElement.removeAttribute('data-error-visible');
   }
   if (birthDate.value.length == 0) {
-    birthDate.focus();
-    return false;
+    birthDate.parentElement.setAttribute('data-error-visible', 'true');
+    validation = false;
+  } else {
+    birthDate.parentElement.removeAttribute('data-error-visible');
   }
   if (quantity.value.length == 0) {
-    quantity.focus();
-    return false;
+    quantity.parentElement.setAttribute('data-error-visible', 'true');
+    validation = false;
+  } else {
+    quantity.parentElement.removeAttribute('data-error-visible');
   }
-  return true;
+  console.log(locations);
+  for(const location of locations) {
+    if (location.checked) {
+      locationsIsChk = true;
+    }
+  }
+  if(!locationsIsChk) {
+    console.log(locations);
+    locations[1].parentElement.setAttribute('data-error-visible', 'true');
+    validation = false;
+  } else {
+    locations[1].parentElement.removeAttribute('data-error-visible');
+  }
+  if (!conditionDUt.checked) {
+    conditionDUt.parentElement.setAttribute('data-error-visible', 'true');
+    validation = false;
+  } else {
+    conditionDUt.parentElement.removeAttribute('data-error-visible');
+  }
+
+  if(validation) {
+    alert("votre demande a bien été envoyé.");
+  }
+  return validation;
 }
