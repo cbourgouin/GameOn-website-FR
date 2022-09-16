@@ -43,36 +43,47 @@ function ValidationForm() {
   const locations = document.querySelectorAll('input[name="location"]');
   const conditionDUt = document.forms["reserve"]["checkbox1"];
 
+  //vérification du prénom
   if (prenom.value.length <= 2) {
     prenom.parentElement.setAttribute('data-error-visible', 'true');
     validation = false;
   } else {
     prenom.parentElement.removeAttribute('data-error-visible');
   }
+
+  //vérification du nom
   if (nom.value.length <= 2) {
     nom.parentElement.setAttribute('data-error-visible', 'true');
     validation = false;
   } else {
     nom.parentElement.removeAttribute('data-error-visible');
   }
+
+  //vérification de l'email
   if (email.value.length == 0) {
     email.parentElement.setAttribute('data-error-visible', 'true');
     validation = false;
   } else {
     email.parentElement.removeAttribute('data-error-visible');
   }
+
+  //vérification de la date de naissance
   if (birthDate.value.length == 0) {
     birthDate.parentElement.setAttribute('data-error-visible', 'true');
     validation = false;
   } else {
     birthDate.parentElement.removeAttribute('data-error-visible');
   }
+
+  //vérification de la quantité de coucours participé
   if (quantity.value.length == 0) {
     quantity.parentElement.setAttribute('data-error-visible', 'true');
     validation = false;
   } else {
     quantity.parentElement.removeAttribute('data-error-visible');
   }
+
+  //vérification de l'emplacement demander
   console.log(locations);
   for(const location of locations) {
     if (location.checked) {
@@ -86,6 +97,8 @@ function ValidationForm() {
   } else {
     locations[1].parentElement.removeAttribute('data-error-visible');
   }
+
+  //vérification des conditions d'utilisations
   if (!conditionDUt.checked) {
     conditionDUt.parentElement.setAttribute('data-error-visible', 'true');
     validation = false;
@@ -93,6 +106,7 @@ function ValidationForm() {
     conditionDUt.parentElement.removeAttribute('data-error-visible');
   }
 
+  //Afficher le message de validation
   if(validation) {
     alert("votre demande a bien été envoyé.");
   }
