@@ -444,6 +444,14 @@ input[data-error]::after {
   font-weight: normal;
   white-space: nowrap;
 }
+.spacing-responsive{
+  display: none;
+}
+@media screen and (max-width: 980px) {
+  .spacing-responsive{
+    display: block;
+  }
+}
 .hero-text {
   width: 146%;
   font-weight: normal;
