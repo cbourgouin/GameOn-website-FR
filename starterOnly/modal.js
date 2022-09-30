@@ -131,12 +131,12 @@ function verifEMail(_email) {
   }
 
   //vérification de la quantité de "@" et la position des "."
-  if(compteurDeA == 1 || _email.indexOf('.', (_email.indexOf('@') + 2)) === -1 ){
+  if(compteurDeA !== 1 || _email.indexOf('.', (_email.indexOf('@') + 2)) === -1 ){
     validation = false;
   }
 
   //vérification du premier caractère
-  if(_email[0] >= '0' && _email[i] <= '9'){
+  if(_email[0] >= '0' && _email[0] <= '9'){
     validation = false;
   }
 
