@@ -11,11 +11,15 @@
 </head>
 
 <body>
-  <div class="topnav" id="myTopnav">
+  <!-- Header contenant le Logo et la bar de navigation -->
+  <header class="topnav" id="myTopnav">
+    <!-- Logo -->
     <div class="header-logo">
       <img alt="logo" src="Logo.png" width="auto" height="auto" />
     </div>
-    <div class="main-navbar">
+
+    <!-- Bar de navigation -->
+    <nav class="main-navbar">
 
       <a href="#" class="active"><span>Accueil</span></a>
       <a href="#"><span>Détails de l'évènement</span></a>
@@ -25,10 +29,11 @@
       <a href="javascript:void(0);" class="icon" onclick="editNav()">
         <i class="fa fa-bars"></i>
       </a>
-    </div>
-  </div>
-  </div>
+    </nav>
+  </header>
+
   <main>
+    <!-- Affichage principal de la page-->
     <div class="hero-section">
       <div class="hero-content">
         <h1 class="hero-headline">
@@ -54,6 +59,7 @@
       </button>
     </div>
 
+    <!-- Pop up et formulaire  d'inscription -->
     <div class="bground">
       <div class="content">
         <span class="close"></span>
@@ -126,7 +132,9 @@
         </div>
       </div>
     </div>
+    
   </main>
+
   <footer>
     <p class="copyrights">
       Copyright 2014 - 2022, GameOn Inc.
