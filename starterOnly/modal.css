@@ -18,7 +18,7 @@ body {
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
-  min-width: 411px;
+  min-width: 300px;
   margin: 0 auto;
 }
 
@@ -322,6 +322,16 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
+.validation {
+  display: none;
+  height: 300px;
+  width: 100%;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
 .btn-submit:disabled {
   background-color: #c4c4c4;
 }
@@ -447,6 +457,7 @@ input[data-error]::after {
 .spacing-responsive{
   display: none;
 }
+/* passage a la ligne */
 @media screen and (max-width: 980px) {
   .spacing-responsive{
     display: block;
@@ -493,6 +504,7 @@ footer {
   margin: 0 20px;
 }
 @media screen and (max-width: 800px) {
+  /* Header */
   .topnav {
     margin: 0;
     min-height: 80px;
@@ -519,6 +531,7 @@ footer {
     padding: 10px;
     margin: 0 10px 0 0;
   }
+  /* Main */
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -564,6 +577,7 @@ footer {
     font-size: 14px;
     margin-bottom: 0;
   }
+  /* Form */
   .bground {
     background-color: rgb(255 255 255 / 0%);
   }
@@ -572,8 +586,9 @@ footer {
     border-radius: 10px 10px 0 0;
     width: 100%;
     max-width: 100%;
-    min-width: 411px;
+    min-width: 300px;
   }
+  /* Form */
   footer{
     height: 12px;
     margin-bottom: 30px;

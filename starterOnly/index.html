@@ -64,7 +64,7 @@
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form name="reserve" action="index.html" method="get" onsubmit="return ValidationForm();">
+          <form name="reserve" action="index.html" method="get" >
             <div class="formData" data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom.">
               <label for="first">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" /<br>
@@ -85,7 +85,7 @@
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
             </div>
-            <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
+            <p class="text-label formData">A quel tournoi souhaitez-vous participer cette année ?</p>
             <div class="formData" data-error="Vous devez choisir une option.">
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" checked/>
               <label class="checkbox-label" for="location1">
@@ -112,7 +112,6 @@
                 <span class="checkbox-icon"></span>
                 Portland</label>
             </div>
-
             <div class="formData" data-error="Vous devez vérifier que vous acceptez les termes et conditions.">
               <input class="checkbox-input" type="checkbox" id="checkbox1" name="checkbox1" checked />
               <label class="checkbox2-label" for="checkbox1">
@@ -127,7 +126,10 @@
               </label>
               <br>
             </div>
-            <input class="btn-submit" type="submit" class="button" value="C'est parti" />
+            <div class="validation">
+              Merci pour <br/> votre inscription
+            </div>
+            <input class="btn-submit" type="button" class="button" onclick="ValidationForm()" value="C'est parti" />
           </form>
         </div>
       </div>
